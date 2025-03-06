@@ -6,7 +6,7 @@
 #    By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/02 15:29:44 by aubertra          #+#    #+#              #
-#    Updated: 2025/03/05 13:05:01 by aubertra         ###   ########.fr        #
+#    Updated: 2025/03/06 12:54:04 by aubertra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-NAME = awesomephonebook
+NAME = zombiegenerator
 
 SRCS =  main.cpp\
 		Zombie.cpp\
-		newZombie.cpp\
-		randomChump.cpp\
+		newzombie.cpp\
+		randomchump.cpp\
 
 OBJS = $(addprefix objs/,$(SRCS:.cpp=.o))
 
