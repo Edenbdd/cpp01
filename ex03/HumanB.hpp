@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:49 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/06 15:51:38 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:45:11 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     ~HumanB();
     void        attack();
     std::string getName();
-    Weapon      getWeapon();
+    Weapon*     getWeapon();
     void        setWeapon(Weapon nWeapon);
 private:
     std::string const _Name;

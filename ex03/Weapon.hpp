@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:54 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/06 15:51:05 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:53:33 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon
     Weapon();
     Weapon(std::string nType);
     ~Weapon();
-    std::string &getType();
+    std::string const &getType();
     void setType(std::string ntype);
   private:
     std::string _type;  

@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:20 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/06 15:52:01 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:04:06 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void HumanB::attack()
 {
     std::string current_weapon;
     
-    current_weapon = this->getWeapon().getType();
+    current_weapon = this->_Weapon.getType();
     std::cout << this->getName() << " attacks with their ";
     if (current_weapon.empty())
         std::cout << "bare hands [HumanB has no weapon]";
@@ -34,12 +34,16 @@ std::string HumanB::getName()
     return (this->_Name);
 }
 
-Weapon  HumanB::getWeapon()
+Weapon  *HumanB::getWeapon()
 {
-    return (this->_Weapon);
+    Weapon  *weaponPtr = &(this->_Weapon);
+    return (weaponPtr);
 }
 void    HumanB::setWeapon(Weapon nWeapon)
 {
-    this->getWeapon() = nWeapon;
+    Weapon  curr_weapon;
+    
+    curr_weapon = this->_Weapon;
+    curr_weapon.setType(nWeapon.getType());
     return;
 }
