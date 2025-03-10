@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:20 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/10 12:17:06 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:03:38 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ HumanB::~HumanB(){}
 
 void HumanB::attack()
 {
-    std::cout << this->getName() << " attacks with their ";
+    std::cout << this->getName() << " attacks with ";
     if (!(this->_Weapon))
         std::cout << "bare hands [HumanB has no weapon]";
     else

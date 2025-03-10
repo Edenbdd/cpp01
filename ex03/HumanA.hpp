@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:47 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/06 15:51:46 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:05:48 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 class HumanA
 {
 public:
-    HumanA(std::string name, Weapon to_equip);
+    HumanA(std::string name, Weapon &to_equip);
     ~HumanA();
     void        attack();
     std::string getName();
     Weapon      getWeapon();
 private:
     std::string const _Name;
-    Weapon const      _Weapon;
+    Weapon const      &_Weapon;
 };
 
 #endif
