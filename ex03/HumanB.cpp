@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:46:20 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/08 15:04:06 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/10 09:37:25 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ Weapon  *HumanB::getWeapon()
 }
 void    HumanB::setWeapon(Weapon nWeapon)
 {
-    Weapon  curr_weapon;
+    Weapon  *curr_weapon;
     
-    curr_weapon = this->_Weapon;
-    curr_weapon.setType(nWeapon.getType());
+    curr_weapon = (&this->_Weapon);
+    curr_weapon->setType(nWeapon.getType());
     return;
 }
