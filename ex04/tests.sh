@@ -6,11 +6,13 @@
 #    By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/02 15:29:44 by aubertra          #+#    #+#              #
-#    Updated: 2025/03/11 15:14:20 by aubertra         ###   ########.fr        #
+#    Updated: 2025/03/11 15:17:57 by aubertra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
+
+make
 
 PROGRAM="valgrind --leak-check=full --error-exitcode=1 ./ft_sed"
 
@@ -110,3 +112,8 @@ echo "${RED}Testing replacing with end of the file${RESET}"
 $PROGRAM $LONG "!@#$%^&*()" "!"
 cat $LONG.replace
 echo "--------------------------------"
+
+rm $BASIC.replace
+rm $LONG.replace
+
+make fclean
