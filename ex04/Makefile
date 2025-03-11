@@ -6,7 +6,7 @@
 #    By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/02 15:29:44 by aubertra          #+#    #+#              #
-#    Updated: 2025/03/06 15:44:28 by aubertra         ###   ########.fr        #
+#    Updated: 2025/03/11 09:50:06 by aubertra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-NAME = violence
+NAME = ft_sed
 
 SRCS =  main.cpp\
 

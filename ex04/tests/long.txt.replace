@@ -1,0 +1,35 @@
+This is a test file to check the robustness of the program.
+It contains various characters and whitespace patterns.
+
+First, let's start with some special characters:
+=*+#$%^&*
+
+Now, let's include some whitespace variations:
+Tabs:		Here is a tab.
+Newlines:
+
+Here is a newline.
+Spaces:    Here are multiple spaces.
+
+Let's mix special characters with whitespace:
+= * + # $ % ^ & *	
+    = * + # $ % ^ & *
+= * + # $ % ^ & *	
+
+Now, let's test the beginning and end of lines:
+= * + # $ % ^ & * at the end
+at the beginning = * + # $ % ^ & *
+
+Finally, let's test the first and last lines:
+First line with special characters: = * + # $ % ^ & *
+Last line with special characters: = * + # $ % ^ & *
+
+Repeated patterns:
+abc abc abc abc abc
+
+Mixed case sensitivity:
+Case CASE case CaSe
+
+Edge cases:
+Empty line above
+Special characters only: !

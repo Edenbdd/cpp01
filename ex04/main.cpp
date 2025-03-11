@@ -6,52 +6,71 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:14:08 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/10 16:55:49 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:10:51 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-int copyFile(std::string infile, std::string copy)
+static int parsing(int argc, char **argv)
 {
-    std::ifstream   ifs(infile);
-    std::ofstream   ofs(copy);
-    std::string     line;
-    
-    while (1)
+    char    c;
+
+    if (argc != 4)
     {
-        getline(ifs, line);
-        if (line.empty())
-            break;
-        ofs << line;
+        std::cerr << "Program takes 3 arguments: file path, to replace (string), replacement (string)" << std::endl;
+        return (-1);
     }
+    if (!argv || !argv[1] || !argv[1][0] || !argv[2] || !argv[2][0] || !argv[3] || !argv[3][0])
+    {
+        std::cerr << "Arguments cannot be empty" << std::endl;
+        return (-1);
+    }
+    std::ifstream   file(argv[1]);
+    if (!file.is_open())
+    {
+        std::cerr << "File cannot be open" << std::endl;
+        return (-1);
+    }
+    if (!(file >> c))
+    {
+        std::cerr << "Error: '" << argv[1] << "' is not readable or is empty" << std::endl;
+        return (-1);
+    }
+    file.close();
     return (0);
 }
 
-int main(int argc, char **argv, char **env)
+int main(int argc, char **argv)
 {   
-    std::ifstream   ifs(argv[0]);
-    std::string     infile = (std::string)argv[0];
-    std::string     outfile;
-    std::string     line;
-    int             pos;
-    std::string     to_replace = (std::string)argv[1];
+    if (parsing(argc, argv))
+        return (-1);
 
-    copyFile(infile, outfile);
-    while (1)
+    std::string const    new_file = (std::string)argv[1] + ".replace";
+    std::string const    to_replace = (std::string)argv[2];
+    std::string          line;
+    int                  pos;
+    int                  new_pos;
+    std::ofstream        ofs(new_file.c_str());
+    std::ifstream        ifs(argv[1]);
+
+    while (getline(ifs, line))
     {
-        getline(ifs, line);
-        if (line.empty())
-            break;
         pos = line.find(to_replace);
-        if (pos == -1)
-            continue;
-        line.erase(pos, to_replace.size());
-        if (pos < line.size())
-            pos = pos + 1;
-        line.insert(pos, argv[2]);
+        while (pos != -1)
+        {
+            line.erase(pos, to_replace.size());
+            line.insert(pos, argv[3]);
+            new_pos = line.find(to_replace);
+            if (new_pos == pos)
+                break;
+            else
+                pos = new_pos;
+        }
+        ofs << line << std::endl;
     }
     ifs.close();
+    ofs.close();
     return (0);
 }
