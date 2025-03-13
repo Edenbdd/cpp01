@@ -6,7 +6,7 @@
 /*   By: aubertra <aubertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:29:44 by aubertra          #+#    #+#             */
-/*   Updated: 2025/03/11 17:42:14 by aubertra         ###   ########.fr       */
+/*   Updated: 2025/03/13 13:25:46 by aubertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ void Harl::error( void )
 
 void Harl::complain(std::string level)
 {
-    int i;
-
-    
     std::string level_arr[4] = {
         "debug",
         "info",
